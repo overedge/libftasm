@@ -7,7 +7,7 @@ _ft_tolower: cmp rdi, 'A'
 			 mov rax, rdi
 			 ret
 
-inferieur_Z: cmp di, 'Z'
+inferieur_Z: cmp rdi, 'Z'
 			 jle add_32
 			 mov rax, rdi
 			 ret

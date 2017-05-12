@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int		ft_isalpha(char c);
 int		ft_isdigit(char c);
@@ -9,6 +11,10 @@ int		ft_isupper(char c);
 int		ft_islower(char c);
 int		ft_toupper(char c);
 int		ft_tolower(char c);
+void	ft_bzero(void *s, size_t n);
+char	*ft_strcat(char *restrict s1, const char *restrict s2);
+size_t	ft_strlen(const char *s);
+int		ft_puts (const char * s);
 
 int		main(void)
 {
@@ -95,6 +101,30 @@ int		main(void)
 	printf("ft_tolower(' ') = %c\n", ft_tolower(' '));
 	printf("ft_tolower('\\t') = %c\n", ft_tolower('\t'));
 	printf("ft_tolower(222) = %c\n\n", ft_tolower(222));
+	
+	char *str;
+	str = (char*)malloc(5);
+	str = strcpy(str, "toto");
 
+	printf("✅---  BZERO TESTS ---✅ \n");
+	printf("STR = [%s]\n", str);
+	ft_bzero(str, 2);
+	printf("BZERO(STR, 2) = [%s]\n\n", str);
+
+	char str3[50] = "coucou";
+	char str4[20] = " sava !";
+
+	printf("✅---  STRCAT TESTS ---✅ \n");
+	printf("STRCAT(\"COUCOU\", \" SAVA !\") = %s \n\n", ft_strcat(str3, str4));
+
+
+	printf("✅--- PUTS TESTS ---✅ \n");
+	printf("PUTS(\"COUCOU\") = %d = ", ft_puts("COUCOU"));
+	ft_puts("coucoudsssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddd x dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd z");
+	printf("\n");
+
+//	printf("✅--- TO STRLEN TESTS ---✅ \n");
+//	printf("STRLEN(\"TOTO\") = %zd\n", ft_strlen("TOTO"));
+//	printf("STRLEN(NULL) = %zd\n", ft_strlen(NULL));
 	return (0);
 }

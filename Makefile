@@ -6,12 +6,12 @@
 #    By: nahmed-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/10 11:06:41 by nahmed-m          #+#    #+#              #
-#    Updated: 2017/05/11 17:25:32 by nahmed-m         ###   ########.fr        #
+#*   Updated: 2017/05/11 23:45:20 by nahmed-m         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 SRC_NAME = ft_isalpha.s ft_isdigit.s ft_isalnum.s ft_isascii.s ft_isprint.s \
-		   ft_isupper.s ft_islower.s ft_toupper.s ft_tolower.s
+		   ft_isupper.s ft_islower.s ft_toupper.s ft_tolower.s ft_bzero.s ft_strlen.s ft_strcat.s ft_puts.s
 
 OBJ_NAME = $(SRC_NAME:.s=.o)
 

@@ -6,11 +6,12 @@
 #    By: nahmed-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/10 11:06:41 by nahmed-m          #+#    #+#              #
-#    Updated: 2017/05/10 16:04:50 by nahmed-m         ###   ########.fr        #
+#    Updated: 2017/05/11 17:25:32 by nahmed-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_NAME = helloword.s
+SRC_NAME = ft_isalpha.s ft_isdigit.s ft_isalnum.s ft_isascii.s ft_isprint.s \
+		   ft_isupper.s ft_islower.s ft_toupper.s ft_tolower.s
 
 OBJ_NAME = $(SRC_NAME:.s=.o)
 
@@ -21,10 +22,10 @@ NAME2 = main
 all : $(NAME)
 
 $(NAME) :
-	nasm -f macho $(SRC_NAME)
+	$(foreach var,$(SRC_NAME), nasm -f macho64 $(var);)
 	ar rc $(NAME) $(OBJ_NAME)
 	ranlib $(NAME)
-#	gcc -o $(NAME2) main.c -L. libfts.a
+	gcc -o $(NAME2) main.c -L. libfts.a
 
 clean :
 	rm -rf $(OBJ_NAME)

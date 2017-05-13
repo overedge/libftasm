@@ -117,14 +117,13 @@ int		main(void)
 	printf("✅---  STRCAT TESTS ---✅ \n");
 	printf("STRCAT(\"COUCOU\", \" SAVA !\") = %s \n\n", ft_strcat(str3, str4));
 
+	printf("✅--- TO STRLEN TESTS ---✅ \n");
+	printf("STRLEN(\"TOTO\") = %zd\n", ft_strlen("TOTO"));
+	printf("STRLEN(NULL) = %zd\n", ft_strlen(NULL));
 
 	printf("✅--- PUTS TESTS ---✅ \n");
-	printf("PUTS(\"COUCOU\") = %d = ", ft_puts("COUCOU"));
-	ft_puts("coucoudsssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddd x dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd z");
-	printf("\n");
+	ft_puts("coucoudsssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddd x dddddddddddd\n\n\n\n\n\n\ndd🦁dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd z");
+	ft_puts(NULL);
 
-//	printf("✅--- TO STRLEN TESTS ---✅ \n");
-//	printf("STRLEN(\"TOTO\") = %zd\n", ft_strlen("TOTO"));
-//	printf("STRLEN(NULL) = %zd\n", ft_strlen(NULL));
 	return (0);
 }

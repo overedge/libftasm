@@ -3,6 +3,7 @@ global _ft_strlen
 section .text
 _ft_strlen: mov r8,  0
 			mov r9, rdi
+			mov si, rdi
 
 while:		cmp r9, 0x00
 			je end

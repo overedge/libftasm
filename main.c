@@ -118,11 +118,14 @@ int		main(void)
 	printf("STRCAT(\"COUCOU\", \" SAVA !\") = %s \n\n", ft_strcat(str3, str4));
 
 	printf("✅--- TO STRLEN TESTS ---✅ \n");
+	printf("STRLEN(\"TOTO\") = %zd\n", ft_strlen("coucoudsssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddd x dddddddddd"));
 	printf("STRLEN(\"TOTO\") = %zd\n", ft_strlen("TOTO"));
 	printf("STRLEN(NULL) = %zd\n", ft_strlen(NULL));
+	printf("STRLEN(\"\") = %zd\n\n", ft_strlen(""));
 
 	printf("✅--- PUTS TESTS ---✅ \n");
-	ft_puts("coucoudsssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddd x dddddddddddd\n\n\n\n\n\n\ndd🦁dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd z");
+	ft_puts("coucoudsssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddd x ddddddddddd");
+	ft_puts("42");
 	ft_puts(NULL);
 
 	return (0);

@@ -9,6 +9,7 @@ int		ft_isascii(char c);
 int		ft_isprint(char c);
 int		ft_isupper(char c);
 int		ft_islower(char c);
+int		ft_isspace(char c);
 int		ft_toupper(char c);
 int		ft_tolower(char c);
 void	ft_bzero(void *s, size_t n);
@@ -17,6 +18,10 @@ size_t	ft_strlen(const char *s);
 int		ft_puts (const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+void	ft_putstr(const char *str);
+void	*ft_memset(void *s, int c, size_t n);
+void	*ft_memcpy (void *dest, const void *src, size_t n);
+char	*ft_strdup(const char *s1);
 
 int		main(void)
 {
@@ -82,6 +87,15 @@ int		main(void)
 	printf("ft_islower('\\t') = %d\n", ft_islower('\t'));
 	printf("ft_islower(222) = %d\n\n", ft_islower(222));
 
+	printf("✅--- IS SPACE  TESTS ---✅ \n");
+	printf("ft_isspace('a') = %d\n", ft_isspace('a'));
+	printf("ft_isspace('Z') = %d\n", ft_isspace('Z'));
+	printf("ft_isspace('1') = %d\n", ft_isspace('1'));
+	printf("ft_isspace(1) = %d\n", ft_isspace(1));
+	printf("ft_isspace(-8) = %d\n", ft_isspace(-8));
+	printf("ft_isspace(' ') = %d\n", ft_isspace(' '));
+	printf("ft_isspace('\\t') = %d\n\n", ft_isspace('\t'));
+
 	printf("✅--- TO UPPER TESTS ---✅ \n");
 	printf("ft_toupper('a') = %c\n", ft_toupper('a'));
 	printf("ft_toupper('Z') = %c\n", ft_toupper('Z'));
@@ -128,7 +142,35 @@ int		main(void)
 	ft_puts("42");
 	ft_puts(NULL);
 	ft_puts("1234567890");
+	ft_puts("");
 	printf("\n");
+
+	printf("✅1--- PUTSTR TESTS ---✅ \n");
+	ft_putstr("coucoudsssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddd x ddddddddddd\n");
+	ft_putstr("42\n");
+	ft_putstr(NULL);
+	ft_putstr("1234567890\n");
+	ft_putstr("12345 😎 7890\n\n");
+	ft_putstr("");
+
+
+	char str5[50];
+	printf("✅1--- MEMSET TESTS ---✅ \n");
+	printf("MEMSET(str, '4', 10) = %s\n", ft_memset(str5, '2', 10));
+	printf("MEMSET(str, '4', 10) = %s\n", ft_memset(str5, '4', 9));
+	printf("MEMSET(str, '4', 10) = %s\n\n", ft_memset(str5, 'B', 3));
+
+	char str6[50];
+	printf("✅1--- MEMCPY TESTS ---✅ \n");
+	printf("MEMCPY(str2, str, 0) = %s\n", ft_memcpy(str6, str5, 0));
+	printf("MEMCPY(str2, NULL, 30) = %s\n", ft_memcpy(str6, NULL, 30));
+	printf("MEMCPY(str2, str, 5) = %s\n\n", ft_memcpy(str6, str5, 6));
+
+
+
+	printf("✅1--- STRDUP TESTS ---✅ \n");
+	char *coucou = ft_strdup("COUCOU");
+	printf("char *coucou = ft_strdup(\"COUCOU\") = %s\n\n", coucou);
 
 
 	printf("✅--- STRCHR TEST ---✅ \n");
@@ -141,8 +183,5 @@ int		main(void)
 	printf("STRRCHR(\"COUCOU MOI C X\", 'X') = %s\n", ft_strrchr("COUCOU MOI C X", 'X'));
 	printf("STRRCHR(\"COUCOU MOI C X\", 'Y') = %s\n\n", ft_strrchr("COUCOU MOI C X", 'Y'));
 
-
-	printf("STRCHR(\"COUCOU MOI C X\", '0') = %s\n\n", ft_strchr("COUCOU MOI C X", '\0'));
-	printf("STRRCHR(\"COUCOU MOI C X\", '0') = %s\n\n", ft_strrchr("COUCOU MOI C X", '\0'));
 	return (0);
 }

@@ -22,6 +22,8 @@ void	ft_putstr(const char *str);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy (void *dest, const void *src, size_t n);
 char	*ft_strdup(const char *s1);
+void	ft_cat(int fd);
+
 
 int		main(void)
 {
@@ -169,7 +171,7 @@ int		main(void)
 
 
 	printf("✅1--- STRDUP TESTS ---✅ \n");
-	char *coucou = ft_strdup("COUCOU");
+	char	*coucou = ft_strdup("COUCOU");
 	printf("char *coucou = ft_strdup(\"COUCOU\") = %s\n\n", coucou);
 
 
@@ -182,6 +184,8 @@ int		main(void)
 	printf("STRRCHR(\"COUCOU MOI C X\", 'U') = %s\n", ft_strrchr("COUCOU MOI C X", 'U'));
 	printf("STRRCHR(\"COUCOU MOI C X\", 'X') = %s\n", ft_strrchr("COUCOU MOI C X", 'X'));
 	printf("STRRCHR(\"COUCOU MOI C X\", 'Y') = %s\n\n", ft_strrchr("COUCOU MOI C X", 'Y'));
+
+	ft_cat(1);
 
 	return (0);
 }

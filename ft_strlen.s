@@ -1,5 +1,6 @@
 global _ft_strlen
-
+; size_t      ft_strlen(const char *str)
+; rax							rdi
 _ft_strlen: 
 
 	cmp rdi, 0 ; si null rax = 0

@@ -14,7 +14,9 @@ int		ft_tolower(char c);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strcat(char *restrict s1, const char *restrict s2);
 size_t	ft_strlen(const char *s);
-int		ft_puts (const char * s);
+int		ft_puts (const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
 int		main(void)
 {
@@ -25,7 +27,6 @@ int		main(void)
 	printf("ft_isalpha(1) = %d\n", ft_isalpha(1));
 	printf("ft_isalpha(-8) = %d\n", ft_isalpha(-8));
 	printf("ft_isalpha(222) = %d\n\n", ft_isalpha(222));
-
 
 	printf("✅--- IS DIGIT  TESTS ---✅ \n");
 	printf("ft_isdigit('a') = %d\n", ft_isdigit('a'));
@@ -70,7 +71,6 @@ int		main(void)
 	printf("ft_isupper(' ') = %d\n", ft_isupper(' '));
 	printf("ft_isupper('\\t') = %d\n", ft_isupper('\t'));
 	printf("ft_isupper(222) = %d\n\n", ft_isupper(222));
-
 
 	printf("✅--- IS LOWER  TESTS ---✅ \n");
 	printf("ft_islower('a') = %d\n", ft_islower('a'));
@@ -118,15 +118,31 @@ int		main(void)
 	printf("STRCAT(\"COUCOU\", \" SAVA !\") = %s \n\n", ft_strcat(str3, str4));
 
 	printf("✅--- TO STRLEN TESTS ---✅ \n");
-	printf("STRLEN(\"TOTO\") = %zd\n", ft_strlen("coucoudsssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddd x dddddddddd"));
-	printf("STRLEN(\"TOTO\") = %zd\n", ft_strlen("TOTO"));
-	printf("STRLEN(NULL) = %zd\n", ft_strlen(NULL));
-	printf("STRLEN(\"\") = %zd\n\n", ft_strlen(""));
+	printf("STRLEN(\"1234567890\") = %zu\n", ft_strlen("1234567890"));
+	printf("STRLEN(\"TOTO\") = %zu\n", ft_strlen("TOTO"));
+	printf("STRLEN(NULL) = %zu\n", ft_strlen(NULL));
+	printf("STRLEN(\"\") = %zu\n\n", ft_strlen(""));
 
 	printf("✅--- PUTS TESTS ---✅ \n");
 	ft_puts("coucoudsssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddddddd x ddddddddddd");
 	ft_puts("42");
 	ft_puts(NULL);
+	ft_puts("1234567890");
+	printf("\n");
 
+
+	printf("✅--- STRCHR TEST ---✅ \n");
+	printf("STRCHR(\"COUCOU MOI C X\", 'X') = %s\n", ft_strchr("COUCOU MOI C X", 'X'));
+	printf("STRCHR(\"COUCOU MOI C X\", 'Y') = %s\n", ft_strchr("COUCOU MOI C X", 'Y'));
+	printf("STRCHR(\"COUCOU MOI C X\", 'M') = %s\n\n", ft_strchr("COUCOU MOI C X", 'M'));
+
+	printf("✅--- STRRCHR TEST ---✅ \n");
+	printf("STRRCHR(\"COUCOU MOI C X\", 'U') = %s\n", ft_strrchr("COUCOU MOI C X", 'U'));
+	printf("STRRCHR(\"COUCOU MOI C X\", 'X') = %s\n", ft_strrchr("COUCOU MOI C X", 'X'));
+	printf("STRRCHR(\"COUCOU MOI C X\", 'Y') = %s\n\n", ft_strrchr("COUCOU MOI C X", 'Y'));
+
+
+	printf("STRCHR(\"COUCOU MOI C X\", '0') = %s\n\n", ft_strchr("COUCOU MOI C X", '\0'));
+	printf("STRRCHR(\"COUCOU MOI C X\", '0') = %s\n\n", ft_strrchr("COUCOU MOI C X", '\0'));
 	return (0);
 }

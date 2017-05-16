@@ -12,7 +12,8 @@
 
 SRC_NAME = ft_isalpha.s ft_isdigit.s ft_isalnum.s ft_isascii.s ft_isprint.s \
 		   ft_isupper.s ft_islower.s ft_toupper.s ft_tolower.s ft_bzero.s \
-		   ft_strlen.s ft_strcat.s ft_puts.s ft_memset.s
+		   ft_strlen.s ft_strcat.s ft_puts.s ft_memset.s ft_strchr.s \
+		   ft_strrchr.s
 
 OBJ_NAME = $(SRC_NAME:.s=.o)
 
@@ -26,10 +27,12 @@ $(NAME) :
 	$(foreach var,$(SRC_NAME), nasm -f macho64 $(var);)
 	ar rc $(NAME) $(OBJ_NAME)
 	ranlib $(NAME)
-	gcc -Wall -Werror -Wextra -o $(NAME2) main.c -L. libfts.a
+	gcc -Wall -Werror -Wextra -c main.c
+	ld -o $(NAME2) main.o $(OBJ_NAME) -macosx_version_min 10.12 -lSystem
 
 clean :
 	rm -rf $(OBJ_NAME)
+	rm -rf main.o
 
 fclean : clean
 	rm -rf $(NAME)
